@@ -21,8 +21,22 @@ public class Card {
         
     }
     public int getValue(){
+        switch(value){
+            case"A":
+                return 11;
+            case "J":
+            case "Q":
+            case "K":
+                return 10;
+            default:
+                return Integer.valueOf(value);
+         
+        }
 }
+    public String getValueAce(){
+        return value;
+    }
     public String getFullName(){
-        
+        return suit+value;
     }
 }

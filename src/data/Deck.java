@@ -5,10 +5,36 @@
  */
 package data;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  *
  * @author Diana
  */
 public class Deck {
+    private ArrayList<Card>cards;
+    
+    private static final char [] suits = new char []{'H', 'S', 'D', 'C'};
+    private static final String[] values = new String []{"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
+    
+               
+    
+    public Deck(){
+        cards = new ArrayList<Card>();
+        for(char suit: suits){
+      //tas ir tas pats kas:for(int i=0; i<suits.length; i++){ char suit = suits[i];}
+            for (String value: values){cards.add(new Card(value,suit)); }
+    }
+    }
+    public void shuffle(){
+        Collections.shuffle(cards);
+    }
+    public Card takeCard(){
+        Card topCard = cards.get(0);
+        cards.remove(0);
+        return topCard;
+    }
+    
     
 }

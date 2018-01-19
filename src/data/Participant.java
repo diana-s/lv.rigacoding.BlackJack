@@ -10,5 +10,12 @@ package data;
  * @author Diana
  */
 public interface Participant {
+    void giveCard(Card card);
     
+    Card [] getCards();
+    
+    int getTotalPoints();
+    
+    boolean isInGame();
 }
+
